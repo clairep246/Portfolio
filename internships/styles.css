@@ -287,24 +287,6 @@ body {
   font: 9px "DM Mono", monospace;
 }
 
-.article-link {
-  display: inline-block;
-  margin-top: 20px;
-  color: #83ddff;
-  font: 10px "DM Mono", monospace;
-  text-decoration: none;
-}
-
-.article-link span {
-  display: inline-block;
-  margin-left: 4px;
-  transition: transform .2s ease;
-}
-
-.article-link:hover span {
-  transform: translate(3px, -3px);
-}
-
 .content {
   width: min(1025px, calc(100% - 96px));
   margin: auto;

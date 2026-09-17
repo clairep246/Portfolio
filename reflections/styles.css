@@ -1,0 +1,198 @@
+:root {
+    --ink: #05070e;
+    --blue: #7dd3fc;
+    --blue-bright: #c4efff;
+    --muted: #a9bbd0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    margin: 0;
+    color: #edf8ff;
+    background: var(--ink);
+    font-family: "Manrope", sans-serif;
+}
+
+.reflections-page {
+    position: relative;
+    isolation: isolate;
+    min-height: 100svh;
+    padding-bottom: 100px;
+    overflow: hidden;
+    background: radial-gradient(ellipse 70% 64% at 98% 84%, rgba(16, 80, 148, .35), transparent 62%), linear-gradient(128deg, #05070d 8%, #071225 58%, #04070f 100%);
+}
+
+.grid {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    opacity: .18;
+    background-image: linear-gradient(rgba(143, 213, 255, .13) 1px, transparent 1px), linear-gradient(90deg, rgba(143, 213, 255, .13) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, black, transparent 86%);
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    width: min(1320px, calc(100% - 96px));
+    margin: 0 auto;
+    padding: 32px 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #b3c5db;
+    font: 15px "DM Mono", monospace;
+    text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--blue);
+}
+
+.reflections-content {
+    width: min(1025px, calc(100% - 96px));
+    margin: clamp(35px, 5vh, 56px) auto 0;
+}
+
+h1 {
+    margin: 0;
+    color: var(--blue-bright);
+    font-size: clamp(2.6rem, 4.5vw, 4rem);
+    letter-spacing: -.075em;
+    line-height: 1;
+}
+
+.page-intro {
+    max-width: 540px;
+    margin: 28px 0 45px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+.reflection-list {
+    border-top: 2px solid rgba(118, 217, 252, .7);
+}
+
+.reflection-row {
+    display: grid;
+    grid-template-columns: 100px 1fr 24px;
+    gap: 20px;
+    align-items: center;
+    padding: 25px 0;
+    color: inherit;
+    border-bottom: 1px solid rgba(125, 211, 250, .22);
+    text-decoration: none;
+}
+
+.post-date {
+    color: #78dafa;
+    font: 11px "DM Mono", monospace;
+}
+
+.post-title {
+    color: #e4f6ff;
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    font-weight: 600;
+    letter-spacing: -.03em;
+}
+
+.read-arrow {
+    color: #8be1ff;
+    font: 24px "DM Mono", monospace;
+    text-align: right;
+    transition: transform .2s ease;
+}
+
+.reflection-row:hover .read-arrow {
+    transform: translate(3px, -3px);
+}
+
+.reader-page {
+    position: relative;
+    isolation: isolate;
+    min-height: 100svh;
+    padding-bottom: 100px;
+    overflow: hidden;
+    background: radial-gradient(ellipse 70% 64% at 98% 84%, rgba(16, 80, 148, .35), transparent 62%), linear-gradient(128deg, #05070d 8%, #071225 58%, #04070f 100%);
+}
+
+.reader-content {
+    width: min(700px, calc(100% - 96px));
+    margin: clamp(35px, 5vh, 56px) auto 0;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.reader-content h1 {
+    margin: 9px 0 30px;
+    color: var(--blue-bright);
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
+    letter-spacing: -.075em;
+    line-height: 1.05;
+}
+
+.reader-content h2 {
+    margin: 46px 0 18px;
+    color: #c6edfc;
+    font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+    letter-spacing: -.035em;
+    line-height: 1.2;
+}
+
+.reader-content p { margin: 0 0 19px; }
+.reader-date { color: #7bdcfb; font: 11px "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.medium-link { color: #8de1ff; font: 11px "DM Mono", monospace; text-decoration: none; }
+.medium-link:hover { text-decoration: underline; }
+
+@media (max-width: 640px) {
+    .nav {
+        justify-content: flex-start;
+        width: calc(100% - 40px);
+        padding: 24px 0;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .nav-links a:nth-child(2) {
+        display: none;
+    }
+
+    .reflections-content {
+        width: calc(100% - 40px);
+        margin-top: 45px;
+    }
+
+    .reflection-row {
+        grid-template-columns: 78px 1fr 20px;
+        gap: 12px;
+        padding: 20px 0;
+    }
+
+    .reader-content {
+        width: calc(100% - 40px);
+        margin-top: 45px;
+    }
+
+    .grid {
+        background-size: 45px 45px;
+    }
+}
